@@ -10,22 +10,21 @@ import android.widget.TextView;
 import java.util.List;
 
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
+    private final LayoutInflater mInflater;
+    private List<Word> mWords;
+
+    WordListAdapter(Context context) {
+        mInflater = LayoutInflater.from(context);
+    }
+
 
     class WordViewHolder extends RecyclerView.ViewHolder {
-        private  final TextView wordItemView;
+        private final TextView wordItemView;
 
         private WordViewHolder(View itemView) {
             super(itemView);
             wordItemView = itemView.findViewById(R.id.textView);
         }
-    }
-
-    private final LayoutInflater mInflater;
-    private List<Word> mWords;
-
-
-    WordListAdapter(Context context) {
-        mInflater = LayoutInflater.from(context);
     }
 
     @Override
@@ -46,10 +45,9 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
     @Override
     public int getItemCount() {
-        if(mWords != null) {
+        if (mWords != null) {
             return mWords.size();
-        }
-        else return 0;
+        } else return 0;
     }
 
     void setWords(List<Word> words) {
