@@ -2,8 +2,9 @@
     <string name="app_name">RoomDatabasePractice2</string>
     <string name="action_settings">Settings</string>
     <string name="no_words">No Words Have Been Entered</string>
-    <string name="hint_word">Word...</string>
+    <string name="hint_word">Enter Category</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="enter_time_hint">Enter Time</string>
 
 </resources>
