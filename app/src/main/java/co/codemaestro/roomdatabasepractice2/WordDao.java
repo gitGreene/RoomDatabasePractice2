@@ -14,9 +14,9 @@ public interface WordDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Word word);
 
-    @Query("DELETE FROM word_table")
+    @Query("DELETE FROM time_table")
     void deleteAll();
 
-    @Query("SELECT * from word_table ORDER BY word ASC")
+    @Query("SELECT * from time_table")
     LiveData<List<Word>> getAllWords();
 }

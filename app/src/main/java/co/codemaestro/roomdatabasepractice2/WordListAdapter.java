@@ -17,13 +17,23 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         mInflater = LayoutInflater.from(context);
     }
 
+    void setWords(List<Word> words) {
+        mWords = words;
+        notifyDataSetChanged();
+    }
+
+
 
     class WordViewHolder extends RecyclerView.ViewHolder {
-        private final TextView wordItemView;
+
+        // Initialize the views
+        private final TextView timeBankTitleView;
+        private final TextView timeBankValueView;
 
         private WordViewHolder(View itemView) {
             super(itemView);
-            wordItemView = itemView.findViewById(R.id.textView);
+            timeBankTitleView = itemView.findViewById(R.id.timeBankTitle);
+            timeBankValueView = itemView.findViewById(R.id.timeBankValue);
         }
     }
 
@@ -37,9 +47,10 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
     public void onBindViewHolder(WordViewHolder holder, int position) {
         if (mWords != null) {
             Word current = mWords.get(position);
-            holder.wordItemView.setText(current.getWord());
+            holder.timeBankTitleView.setText(current.getTimeBankTitle());
+            holder.timeBankValueView.setText(current.getTimeBankValue());
         } else {
-            holder.wordItemView.setText(R.string.no_words);
+            holder.timeBankTitleView.setText(R.string.no_words);
         }
     }
 
@@ -50,10 +61,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         } else return 0;
     }
 
-    void setWords(List<Word> words) {
-        mWords = words;
-        notifyDataSetChanged();
-    }
+
 
 
 }
