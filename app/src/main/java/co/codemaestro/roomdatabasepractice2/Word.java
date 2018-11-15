@@ -21,6 +21,10 @@ public class Word {
         this.mTimeBankValue = mTimeBankValue;
     }
 
+    public Word(){
+
+    }
+
     public String getTimeBankTitle(){
         return this.mTimeBankTitle;
     }
